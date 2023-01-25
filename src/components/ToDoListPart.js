@@ -9,7 +9,6 @@ function ToDoListPart() {
 	let now = new Date(); // 현재 날짜 및 시간.
 	// let hour = now.getHours();
 	// let minutes = now.getMinutes();
-	// ㄴㅇ
 
 	const [completeTime, setCompleteTime] = useState({
 		nowHour: 0,
@@ -30,11 +29,17 @@ function ToDoListPart() {
 						nowHour: now.getHours(),
 						nowMinutes: now.getMinutes(),
 					}));
-					console.log(completeTime.nowHour + ':' + completeTime.nowMinutes);
 				}}
 			/>
 			<S.todoitem>
-				{todoinfo.complete === false ? <>{todoinfo.content}</> : <del>{todoinfo.content}</del>}
+				{todoinfo.complete === false ? (
+					todoinfo.content
+				) : (
+					<S.DelItem style={{ width: '100%' }}>
+						<del>{todoinfo.content} </del>
+						<span>{completeTime.nowHour + ':' + completeTime.nowMinutes}</span>
+					</S.DelItem>
+				)}
 			</S.todoitem>
 			<S.delBtn onClick={() => dispatch(remove(todolist[idx].id))}>
 				<BsTrash size='20' />
