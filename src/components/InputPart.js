@@ -1,6 +1,6 @@
 import * as S from './index.styled';
-import { useState, useEffect } from 'react';
-import { useDispatch, useSelector } from 'react-redux';
+import { useState } from 'react';
+import { useDispatch } from 'react-redux';
 import { add } from '../redux/todos';
 
 function InputPart() {

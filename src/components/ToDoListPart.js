@@ -4,12 +4,12 @@ import { BsTrash } from 'react-icons/bs';
 
 import { useDispatch, useSelector } from 'react-redux';
 import { remove, complete } from '../redux/todos';
-import { useEffect } from 'react';
 
 function ToDoListPart() {
 	let now = new Date(); // 현재 날짜 및 시간.
-	let hour = now.getHours();
-	let minutes = now.getMinutes();
+	// let hour = now.getHours();
+	// let minutes = now.getMinutes();
+	// ㄴㅇ
 
 	const [completeTime, setCompleteTime] = useState({
 		nowHour: 0,
