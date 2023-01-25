@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import { BsTrashFill } from 'react-icons/bs';
+// import { BsTrashFill } from 'react-icons/bs';
 
 export const back = styled.div`
 	display: flex;

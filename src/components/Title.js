@@ -7,8 +7,8 @@ function Title() {
 	let todoYear = now.getFullYear();
 	const week = ['SUN', 'MON', 'TUE', 'WEN', 'THU', 'FRI', 'SAT'];
 	let dayOfWeek = week[now.getDay()];
-	let hour = now.getHours();
-	let minutes = now.getMinutes();
+	// let hour = now.getHours();
+	// let minutes = now.getMinutes();
 
 	return (
 		<>
