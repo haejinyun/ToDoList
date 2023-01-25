@@ -46,8 +46,15 @@ export const listbox = styled.li`
 	align-items: center;
 `;
 
+export const DelItem = styled.span`
+	display: flex;
+	width: 100%;
+	justify-content: space-between;
+`;
+
 export const todoitem = styled.div`
-	text-align: center;
+	width: 100%;
+	margin: 0px 8px;
 `;
 
 export const delBtn = styled.button`
@@ -62,7 +69,6 @@ export const delBtn = styled.button`
 `;
 
 export const check = styled.input`
-	margin-right: 15px;
 	cursor: pointer;
 `;
 
