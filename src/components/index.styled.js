@@ -1,12 +1,6 @@
 import styled from 'styled-components';
 // import { BsTrashFill } from 'react-icons/bs';
 
-export const back = styled.div`
-	display: flex;
-	justify-content: center;
-	margin: 0 auto;
-`;
-
 export const inputBox = styled.input`
 	width: 224px;
 	height: 30px;
@@ -18,10 +12,8 @@ export const inputBox = styled.input`
 `;
 
 export const title = styled.p`
-	margin-top: 150px;
 	font-size: 50px;
 	color: rgb(114, 134, 211);
-	text-align: center;
 	font-weight: bolder;
 `;
 
@@ -42,20 +34,16 @@ export const submitBtn = styled.input`
 `;
 
 export const allListsbox = styled.ul`
-	width: 300px;
 	margin-top: 30px;
-	margin-left: auto;
-	margin-right: auto;
+	list-style: none;
+	padding-left: 0;
 `;
 
 export const listbox = styled.li`
-	/* display: flex;
-	flex-wrap: wrap;
-	flex-direction: row; */
-	width: 250px;
-	margin-top: 10px;
 	display: flex;
-	margin-bottom: 10px;
+	width: 280px;
+	margin: 10px 0;
+	align-items: center;
 `;
 
 export const todoitem = styled.div`
@@ -79,7 +67,6 @@ export const check = styled.input`
 `;
 
 export const tableSet = styled.table`
-	margin: 0 auto;
 	width: 280px;
 	text-align: center;
 	margin-bottom: 15px;

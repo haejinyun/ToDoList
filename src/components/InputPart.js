@@ -32,27 +32,25 @@ function InputPart() {
 	};
 	return (
 		<>
-			<S.back>
-				<form
-					onSubmit={(e) => {
-						//엔더 및 버튼을 누르면 실행.
-						e.preventDefault();
-						todoset();
-						textReset(); //입력 칸을 빈 칸으로 돌리기.
-					}}
-				>
-					<>
-						<S.inputBox
-							value={todoItem.text}
-							type='text'
-							name='toDoItems'
-							placeholder='할 일을 입력하세요.'
-							onChange={bringText}
-						/>
-						<S.submitBtn type='submit' value='+' />
-					</>
-				</form>
-			</S.back>
+			<form
+				onSubmit={(e) => {
+					//엔더 및 버튼을 누르면 실행.
+					e.preventDefault();
+					todoset();
+					textReset(); //입력 칸을 빈 칸으로 돌리기.
+				}}
+			>
+				<>
+					<S.inputBox
+						value={todoItem.text}
+						type='text'
+						name='toDoItems'
+						placeholder='할 일을 입력하세요.'
+						onChange={bringText}
+					/>
+					<S.submitBtn type='submit' value='+' />
+				</>
+			</form>
 		</>
 	);
 }
