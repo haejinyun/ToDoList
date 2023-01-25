@@ -14,18 +14,21 @@ function Title() {
 		<>
 			<S.title>ToDos!</S.title>
 			<S.tableSet>
-				<tbody>
-					<S.tdSet bozsize='50px' size='40px' fontweight='bolder'>
+				<tr>
+					<S.tdSet pos='center' bozsize='50px' size='40px' fontweight='bolder' rowSpan='2'>
 						{todoDate}
 					</S.tdSet>
-					<td>
-						<tbody>
-							<tr>{todayMonth}</tr>
-							<tr> {todoYear}</tr>
-						</tbody>
-					</td>
-					<S.tdSet size='20px'>{dayOfWeek}</S.tdSet>
-				</tbody>
+					<S.tdSet rowspan='1' pos='left'>
+						{todayMonth}
+					</S.tdSet>
+					<S.tdSet verpos='center' rowSpan='2' pos='right' size='20px'>
+						{dayOfWeek}
+					</S.tdSet>
+				</tr>
+
+				<tr>
+					<S.tdSet pos='left'>{todoYear}</S.tdSet>
+				</tr>
 			</S.tableSet>
 		</>
 	);

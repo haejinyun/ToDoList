@@ -14,6 +14,7 @@ export const inputBox = styled.input`
 	border-bottom: solid 1px gray;
 	padding-left: 8px;
 	margin-right: 15px;
+	outline: none;
 `;
 
 export const title = styled.p`
@@ -48,10 +49,17 @@ export const allListsbox = styled.ul`
 `;
 
 export const listbox = styled.li`
+	/* display: flex;
+	flex-wrap: wrap;
+	flex-direction: row; */
 	width: 250px;
 	margin-top: 10px;
 	display: flex;
 	margin-bottom: 10px;
+`;
+
+export const todoitem = styled.div`
+	text-align: center;
 `;
 
 export const delBtn = styled.button`
@@ -78,8 +86,8 @@ export const tableSet = styled.table`
 `;
 
 export const tdSet = styled.td`
-	text-align: center;
-	vertical-align: middle;
+	text-align: ${(props) => props.pos};
+	vertical-align: center;
 	font-size: ${(props) => props.size};
 	font-weight: ${(propps) => propps.fontweight};
 	width: ${(propps) => propps.bozsize};

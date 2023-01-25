@@ -20,6 +20,16 @@ function InputPart() {
 	const textReset = () => {
 		setToDoItem({ text: '' });
 	};
+
+	const todoset = () => {
+		if (todoItem.text !== '') {
+			console.log('할일 들어 옴.');
+			//입력된 값이 빈값이 아니라면
+			dispatch(add(todoItem.text)); // 입력된 값을 add액션을 실행.
+		} else {
+			alert('할 일을 입력하지 않았습니다!');
+		} //입력된 값 없을때
+	};
 	return (
 		<>
 			<S.back>
@@ -27,13 +37,7 @@ function InputPart() {
 					onSubmit={(e) => {
 						//엔더 및 버튼을 누르면 실행.
 						e.preventDefault();
-						if (todoItem.text !== '') {
-							console.log('할일 들어 옴.');
-							//입력된 값이 빈값이 아니라면
-							dispatch(add(todoItem.text)); // 입력된 값을 add액션을 실행.
-						} else {
-							alert('할 일을 입력하지 않았습니다!');
-						} //입력된 값 없을때
+						todoset();
 						textReset(); //입력 칸을 빈 칸으로 돌리기.
 					}}
 				>
