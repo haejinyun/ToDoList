@@ -1,11 +1,13 @@
 import * as S from './index.styled';
 import { useState } from 'react';
-import { useDispatch } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 import { add } from '../redux/todos';
+import { useEffect } from 'react';
 
 function InputPart() {
 	const dispatch = useDispatch();
 	//const todos = useSelector((state) => state.todoinfo);
+	//const todolist = useSelector((state) => state.todoinfo);
 
 	const [todoItem, setToDoItem] = useState({
 		//입력받은 todo를 받고 id 와 text를 가짐.
@@ -24,12 +26,12 @@ function InputPart() {
 	const todoset = () => {
 		if (todoItem.text !== '') {
 			console.log('할일 들어 옴.');
-			//입력된 값이 빈값이 아니라면
 			dispatch(add(todoItem.text)); // 입력된 값을 add액션을 실행.
 		} else {
 			alert('할 일을 입력하지 않았습니다!');
 		} //입력된 값 없을때
 	};
+
 	return (
 		<>
 			<form
@@ -41,14 +43,14 @@ function InputPart() {
 				}}
 			>
 				<>
-					<S.inputBox
+					<S.InputBox
 						value={todoItem.text}
 						type='text'
 						name='toDoItems'
 						placeholder='할 일을 입력하세요.'
 						onChange={bringText}
 					/>
-					<S.submitBtn type='submit' value='+' />
+					<S.SubmitBtn type='submit' value='+' />
 				</>
 			</form>
 		</>

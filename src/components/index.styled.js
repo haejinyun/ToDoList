@@ -1,7 +1,7 @@
 import styled from 'styled-components';
 // import { BsTrashFill } from 'react-icons/bs';
 
-export const inputBox = styled.input`
+export const InputBox = styled.input`
 	width: 224px;
 	height: 30px;
 	border: none;
@@ -11,13 +11,13 @@ export const inputBox = styled.input`
 	outline: none;
 `;
 
-export const title = styled.p`
+export const Title = styled.p`
 	font-size: 50px;
 	color: rgb(114, 134, 211);
 	font-weight: bolder;
 `;
 
-export const submitBtn = styled.input`
+export const SubmitBtn = styled.input`
 	background-color: rgb(142, 167, 233);
 	border-radius: 10px;
 	color: white;
@@ -33,13 +33,13 @@ export const submitBtn = styled.input`
 	}
 `;
 
-export const allListsbox = styled.ul`
+export const AllListsbox = styled.ul`
 	margin-top: 30px;
 	list-style: none;
 	padding-left: 0;
 `;
 
-export const listbox = styled.li`
+export const Listbox = styled.li`
 	display: flex;
 	width: 280px;
 	margin: 10px 0;
@@ -52,12 +52,12 @@ export const DelItem = styled.span`
 	justify-content: space-between;
 `;
 
-export const todoitem = styled.div`
+export const Todoitem = styled.div`
 	width: 100%;
 	margin: 0px 8px;
 `;
 
-export const delBtn = styled.button`
+export const DelBtn = styled.button`
 	margin-left: auto;
 	background-color: transparent;
 	border: none;
@@ -68,17 +68,17 @@ export const delBtn = styled.button`
 	}
 `;
 
-export const check = styled.input`
+export const Check = styled.input`
 	cursor: pointer;
 `;
 
-export const tableSet = styled.table`
+export const TableSet = styled.table`
 	width: 280px;
 	text-align: center;
 	margin-bottom: 15px;
 `;
 
-export const tdSet = styled.td`
+export const TdSet = styled.td`
 	text-align: ${(props) => props.pos};
 	vertical-align: center;
 	font-size: ${(props) => props.size};

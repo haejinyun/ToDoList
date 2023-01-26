@@ -1,26 +1,44 @@
 import * as S from './index.styled';
 import { useState } from 'react';
 import { BsTrash } from 'react-icons/bs';
-
+import { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { remove, complete } from '../redux/todos';
 
 function ToDoListPart() {
 	let now = new Date(); // 현재 날짜 및 시간.
-	// let hour = now.getHours();
-	// let minutes = now.getMinutes();
-
 	const [completeTime, setCompleteTime] = useState({
 		nowHour: 0,
 		nowMinutes: 0,
 	});
+	//const [localToDo, setLocalToDo] = useState([]); //담아야 하나..
 
 	const dispatch = useDispatch();
 	const todolist = useSelector((state) => state.todoinfo);
 
+	useEffect(() => {
+		//todolist가 바뀔때마다 localstorage에 저장해 list라는 이름으로
+		localStorage.setItem('list', JSON.stringify(todolist));
+	}, [todolist]);
+
+	const getToDo = () => {
+		//아직 함수를 못씀 쓰면 오류..
+		//가져오는 부분.
+		let loadToDo = localStorage.getItem('todos');
+		if (loadToDo) {
+			//만약 있다면
+			//setLocalToDo(getToDo());
+
+			return (loadToDo = JSON.parse(localStorage.getItem('todos'))); //이걸 담아서 리턴해
+		} else {
+			return []; //없으면 빈 배열
+		}
+	};
+	console.log(todolist); // 들어온 값
+
 	const todoview = todolist.map((todoinfo, idx) => (
-		<S.listbox key={todolist[idx].id}>
-			<S.check
+		<S.Listbox key={todolist[idx].id}>
+			<S.Check
 				type='checkbox'
 				onChange={() => {
 					dispatch(complete(todolist[idx].id));
@@ -31,7 +49,7 @@ function ToDoListPart() {
 					}));
 				}}
 			/>
-			<S.todoitem>
+			<S.Todoitem>
 				{todoinfo.complete === false ? (
 					todoinfo.content
 				) : (
@@ -40,16 +58,20 @@ function ToDoListPart() {
 						<span>{completeTime.nowHour + ':' + completeTime.nowMinutes}</span>
 					</S.DelItem>
 				)}
-			</S.todoitem>
-			<S.delBtn onClick={() => dispatch(remove(todolist[idx].id))}>
+			</S.Todoitem>
+			<S.DelBtn
+				onClick={() => {
+					dispatch(remove(todolist[idx].id));
+				}}
+			>
 				<BsTrash size='20' />
-			</S.delBtn>
-		</S.listbox>
+			</S.DelBtn>
+		</S.Listbox>
 	));
-	console.log(todolist);
+	//console.log(todolist);
 	return (
 		<>
-			<S.allListsbox>{todoview}</S.allListsbox>
+			<S.AllListsbox>{todoview}</S.AllListsbox>
 		</>
 	);
 }

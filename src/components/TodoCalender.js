@@ -11,23 +11,23 @@ function TodoCalender() {
 	// let minutes = now.getMinutes();
 
 	return (
-		<S.tableSet>
+		<S.TableSet>
 			<tr>
-				<S.tdSet pos='center' bozsize='50px' size='40px' fontweight='bolder' rowSpan='2'>
+				<S.TdSet pos='center' bozsize='50px' size='40px' fontweight='bolder' rowSpan='2'>
 					{todoDate}
-				</S.tdSet>
-				<S.tdSet rowspan='1' pos='left'>
+				</S.TdSet>
+				<S.TdSet rowspan='1' pos='left'>
 					{todayMonth}
-				</S.tdSet>
-				<S.tdSet verpos='center' rowSpan='2' pos='right' size='20px'>
+				</S.TdSet>
+				<S.TdSet verpos='center' rowSpan='2' pos='right' size='20px'>
 					{dayOfWeek}
-				</S.tdSet>
+				</S.TdSet>
 			</tr>
 
 			<tr>
-				<S.tdSet pos='left'>{todoYear}</S.tdSet>
+				<S.TdSet pos='left'>{todoYear}</S.TdSet>
 			</tr>
-		</S.tableSet>
+		</S.TableSet>
 	);
 }
 
