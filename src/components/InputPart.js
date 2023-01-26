@@ -7,8 +7,7 @@ import { useEffect } from 'react';
 function InputPart() {
 	const dispatch = useDispatch();
 	//const todos = useSelector((state) => state.todoinfo);
-	//const todolist = useSelector((state) => state.todoinfo);
-
+	const todolist = useSelector((state) => state.todoinfo);
 	const [todoItem, setToDoItem] = useState({
 		//입력받은 todo를 받고 id 와 text를 가짐.
 		id: 0,
